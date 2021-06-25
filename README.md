@@ -1,2 +1,2 @@
-# Hacker News
+# Hacker News Angular App
 

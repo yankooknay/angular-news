@@ -1,0 +1,36 @@
+<h1>Hacker News</h1>
+
+<!-- TODO: make enhacements to the styles -->
+
+<div #myDiv>
+    <mat-form-field class="example-form-field">
+        <mat-label>Search by title</mat-label>
+        <input matInput type="text" [(ngModel)]="filter">
+        <button *ngIf="filter" matSuffix mat-icon-button aria-label="Clear" (click)="clear()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+    <button mat-button color="primary" (click)="search()">Search</button>
+</div>
+
+<cdk-virtual-scroll-viewport #virtualscroll [itemSize]="120" class="example-viewport" (scroll)="onScroll($event)">
+    <div *cdkVirtualFor="let item of news;
+                         let index = index;
+                         let count = count;
+                         let first = first;
+                         let last = last;
+                         let even = even;
+                         let odd = odd;" [class.example-alternate]="odd">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title>
+                    <a class="nostyle" [class.nocursor]="item.url == null" href="{{item.url}}" (click)="item.url != null">{{item.title}}</a>
+                </mat-card-title>
+                <mat-card-subtitle>By {{item.by}}</mat-card-subtitle>
+            </mat-card-header>
+        </mat-card>
+    </div>
+</cdk-virtual-scroll-viewport>
+<div class="footer">
+    <span>Total {{newsTotal}}</span>
+</div>

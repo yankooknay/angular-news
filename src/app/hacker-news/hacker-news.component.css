@@ -1,0 +1,48 @@
+mat-card {
+    margin: 12px;
+}
+
+a.nostyle:link {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+a.nostyle:visited {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+a.nocursor:link {
+    cursor: auto;
+}
+
+mat-form-field {
+    margin: 20px;
+    width: 500px;
+}
+
+input,
+button,
+submit {
+    border: none;
+    background-color: transparent;
+}
+
+cdk-virtual-scroll-viewport {
+    border: none;
+}
+
+.example-viewport {
+    height: 600px;
+    width: 100%;
+}
+
+.footer {
+    color: #fff;
+    font-weight: 600;
+    font-size: 19px;
+    background-color: #3f8edc;
+    padding: 11px;
+    display: flex;
+    flex-direction: row-reverse;
+}
